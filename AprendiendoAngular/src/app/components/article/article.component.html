@@ -1,0 +1,31 @@
+<!-- <app-slider></app-slider> -->
+<div class="center">
+    <section id="content">
+        <h2 class="subheader">{{article?.title}}</h2>
+        <!--
+        <div class="article-item" *ngFor=" let article of articles ">
+            <h2>{{article.title}}</h2>
+        </div> -->
+
+        <article class="article-item article-detail">
+            <div class="image-wrap">
+                <img src="https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg?auto=compress&cs=tinysrgb&w=300"
+                    alt="Paisaje" />
+            </div>
+
+            <h1 class="subheader">Articulo de prueba</h1>
+            <span class="date">
+                {{article?.date}}
+            </span>
+            <p>
+                {{article?.content}}
+            </p>
+            <div class="buttons">
+                <a [routerLink]="['/blog/editar/',article?.id]" class="btn btn-warning">Editar</a>
+                <a href="#" class="btn btn-danger">Borrar</a>
+            </div>
+            <div class="clearfix"></div>
+        </article>
+    </section>
+
+</div>

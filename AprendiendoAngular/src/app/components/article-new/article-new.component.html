@@ -1,0 +1,44 @@
+<!-- <app-slider></app-slider> -->
+<div class="center">
+    <section id="content">
+        <h2 class="subheader">Crear Articulo</h2>
+        <form class="mid-form" #articleForm="ngForm" (ngSubmit)="onSubmit()">
+
+
+            <div class="form-group">
+                <label for="title">Titulo</label>
+                <input type="text" name="title" #title="ngModel" [(ngModel)]="titleTmp" required pattern="[a-zA-Z]" />
+                <small *ngIf="!title.valid && title.touched">
+                    El nombre no es valido
+                </small>
+            </div>
+
+
+            <div class="form-group">
+                <label for="content">Contenido</label>
+                <textarea name="content" #content="ngModel" [(ngModel)]="contentTmp"></textarea>
+                <small *ngIf="!content.valid && content.touched">
+                    El contenido no es valido
+                </small>
+            </div>
+
+            <div class="form-group">
+                <label for="image">Archivo</label>
+                <!-- <input type="file" name="file0" /> -->
+                <!-- <input type="file" class="file-upload" #fupload="ngModel" [(ngModel)]="fuoloadTmp" onchange="console.log(event.target.files)"> -->
+                <input type="file" name="fupload" #fupload="ngModel" [(ngModel)]="fuoloadTmp" onchange="uploadImage()"/>
+
+                <!-- <input type="file" class="file-upload" onchange="uploadImage()"> -->
+
+
+            </div>
+
+            <div class="clearfix"></div>
+
+            <input type="submit" value="Guardar" class="btn btn-success" />
+
+        </form>
+
+    </section>
+
+</div>
